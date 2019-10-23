@@ -7,19 +7,29 @@ class Series extends Component {
     series: []
   };
 
-  componentDidMount() {
-    fetch("http://api.tvmaze.com/search/shows?q=Vikings")
+//   componentDidMount() {
+//     fetch("http://api.tvmaze.com/search/shows?q=Vikings")
+//       .then(response => response.json())
+//       .then(json => this.setState({ series: json }));
+//   }
+
+  onSeriesInputChange = e => {
+    fetch(`http://api.tvmaze.com/search/shows?q=${e.target.value}`)
       .then(response => response.json())
       .then(json => this.setState({ series: json }));
-  }
+
+    // console.log(e);
+    // console.log(e.target.value);
+  };
 
   render() {
-    return (<React.Fragment>
-        {/* Length of the series array - {this.state.series.length} */}
-        <SeriesList
-        list={this.state.series}
-        />
-    </React.Fragment>);
+    return (
+      <React.Fragment>
+        <input type="text" onChange={this.onSeriesInputChange} />
+
+        <SeriesList list={this.state.series} />
+      </React.Fragment>
+    );
   }
 }
 
