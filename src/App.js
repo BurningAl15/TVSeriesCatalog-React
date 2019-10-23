@@ -15,7 +15,7 @@ class App extends React.Component {
           message="Hey Whatsapp dude?"
           content="Here you can find all of your most loved series"
         />
-        <Series/>
+        <Series />
       </div>
     );
   }
