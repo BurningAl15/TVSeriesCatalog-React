@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import SeriesList from "./SeriesList";
-
+import Intro from "./Intro";
 import Loader from "./Loader";
 class Series extends Component {
   state = {
@@ -24,6 +24,11 @@ class Series extends Component {
 
     return (
       <React.Fragment>
+        <Intro
+          message="Hey Whatsapp dude?"
+          content="Here you can find all of your most loved series"
+        />
+
         <input
           value={seriesName}
           type="text"
