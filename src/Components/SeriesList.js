@@ -1,11 +1,17 @@
 import React from "react";
 
 import "./styles/SeriesList.css";
+import {Link} from 'react-router-dom';
+
 
 const SeriesListItem = ({ series }) => {
   return (
     <React.Fragment>
-      <li>{series.show.name}</li>
+      <li>
+        <Link to={`/series/${series.show.id}`}>
+            {series.show.name}
+        </Link>
+      </li>
     </React.Fragment>
   );
 };
